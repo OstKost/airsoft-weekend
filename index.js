@@ -64,6 +64,11 @@ async function getGames() {
   await Promise.all(promises);
 }
 
-cron.schedule('0,15,30,45 * * * 3-6', () => {
+// cron.schedule('0,15,30,45 * * * 3-6', () => {
+//   getGames();
+// });
+
+cron.schedule('* * * * *', () => {
   getGames();
+  sendMessage('Check');
 });
