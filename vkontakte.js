@@ -7,6 +7,7 @@ async function startVK() {
     password: process.env.VK_PASS,
     sessionFile: path.join(__dirname, '.my-session'),
   });
+  console.log('VK success', !!response);
   return response;
 }
 
